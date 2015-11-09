@@ -154,7 +154,7 @@
             swf: '../../dist/Uploader.swf',
             chunked: false,
             chunkSize: 512 * 1024,
-            server: '../../server/fileupload.php',
+            server: '<%=request.getContextPath() + "/"%>upload.htm',
             // runtimeOrder: 'flash',
 
             // accept: {

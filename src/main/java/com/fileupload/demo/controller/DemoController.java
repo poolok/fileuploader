@@ -25,8 +25,11 @@ public class DemoController {
 
     @RequestMapping("/upload.htm")
     @ResponseBody
-    public String upload(@RequestParam("file") CommonsMultipartFile file) {
-        System.err.println("file:" + file.getOriginalFilename());
+    public String upload(@RequestParam("file") CommonsMultipartFile[] files) {
+        //等到上传文件列表
+        for (CommonsMultipartFile file : files)
+            System.err.println("文件名:" + file.getOriginalFilename());
+        //剩下的可以自己操作
         return "";
     }
 }
